@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="landingstyle.css"/>
+    <title>Dashboard | Fitclub</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>
+      </div>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#explore">Programs</a></li>
+        <li><a href="#">Classes</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+      <div class="user-profile">
+        <div class="user-avatar">JD</div>
+        <span>John Doe</span>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="dashboard-header">
+        <h1>Welcome Back, John!</h1>
+        <p>Track your fitness journey and manage your classes</p>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="icon"><i class="ri-calendar-check-line"></i></div>
+          <h3 id="totalClasses">5</h3>
+          <p>Total Classes Booked</p>
+        </div>
+        <div class="stat-card">
+          <div class="icon"><i class="ri-fire-line"></i></div>
+          <h3 id="completedClasses">3</h3>
+          <p>Classes Completed</p>
+        </div>
+        <div class="stat-card">
+          <div class="icon"><i class="ri-time-line"></i></div>
+          <h3 id="upcomingClasses">2</h3>
+          <p>Upcoming Classes</p>
+        </div>
+        <div class="stat-card">
+          <div class="icon"><i class="ri-trophy-line"></i></div>
+          <h3 id="membershipDays">28</h3>
+          <p>Days Active</p>
+        </div>
+      </div>
+
+      <!-- Booked Classes Section -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">My Booked Classes</h2>
+          <button class="btn" onclick="bookNewClass()">
+            <i class="ri-add-line"></i> Book New Class
+          </button>
+        </div>
+
+        <div class="classes-grid" id="classesGrid">
+          <!-- Classes will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script src="landinglogic.js"></script>
+  </body>
+</html>
