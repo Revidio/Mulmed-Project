@@ -1,56 +1,6 @@
 // Sample data for booked classes
-      const bookedClasses = [
-        {
-          id: 1,
-          name: "HIIT Cardio Blast",
-          type: "Cardio",
-          date: "2025-05-30",
-          time: "09:00 AM",
-          instructor: "Sarah Johnson",
-          duration: "45 min",
-          status: "upcoming"
-        },
-        {
-          id: 2,
-          name: "Strength Training",
-          type: "Strength",
-          date: "2025-05-28",
-          time: "06:00 PM",
-          instructor: "Mike Wilson",
-          duration: "60 min",
-          status: "completed"
-        },
-        {
-          id: 3,
-          name: "Yoga Flow",
-          type: "Flexibility",
-          date: "2025-05-29",
-          time: "07:30 AM",
-          instructor: "Emma Davis",
-          duration: "50 min",
-          status: "upcoming"
-        },
-        {
-          id: 4,
-          name: "Boxing Fundamentals",
-          type: "Boxing",
-          date: "2025-05-25",
-          time: "05:00 PM",
-          instructor: "Alex Rodriguez",
-          duration: "55 min",
-          status: "completed"
-        },
-        {
-          id: 5,
-          name: "Pilates Core",
-          type: "Pilates",
-          date: "2025-05-26",
-          time: "10:00 AM",
-          instructor: "Lisa Chen",
-          duration: "45 min",
-          status: "completed"
-        }
-      ];
+      const bookedClasses = JSON.parse(localStorage.getItem("bookedClasses")) || [];
+
 
       function formatDate(dateString) {
         const date = new Date(dateString);
@@ -154,7 +104,7 @@
       function bookNewClass() {
         alert('Redirecting to class booking page...');
         // In a real app, this would redirect to the class booking page
-        // window.location.href = 'classRegis.html';
+        window.location.href = 'classRegis.html';
       }
 
       function cancelClass(classId) {

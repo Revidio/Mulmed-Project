@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Purchase Page</title>
+  <link rel="stylesheet" href="paymentpagestyle.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Select Your Plan</h1>
+    <div class="pricing-grid">
+      <div class="card">
+        <h2>Basic Plan</h2>
+        <p class="price">$16</p>
+        <ul class="features">
+          <li>Smart workout plan</li>
+          <li>At home workouts</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Weekly Plan</h2>
+        <p class="price">$25</p>
+        <ul class="features">
+          <li>PRO Gyms</li>
+          <li>Smart workout plan</li>
+          <li>At home workouts</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Monthly Plan</h2>
+        <p class="price">$45</p>
+        <ul class="features">
+          <li>ELITE Gyms & Classes</li>
+          <li>PRO Gyms</li>
+          <li>Smart workout plan</li>
+          <li>At home workouts</li>
+          <li>Personal Training</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="payment-form">
+      <h2>Payment Details</h2>
+      <form id="paymentForm">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="John Doe" required/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@example.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required/>
+        </div>
+        <div class="form-group">
+          <label for="expiryDate">Expiry Date</label>
+          <input type="text" id="expiryDate" placeholder="MM/YY" required/>
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="number" id="cvv" placeholder="123" required/>
+        </div>
+        <div class="form-group">
+          <label for="plan">Selected Plan</label>
+          <select id="plan">
+            <option value="basic">Basic Plan ($16)</option>
+            <option value="weekly">Weekly Plan ($25)</option>
+            <option value="monthly">Monthly Plan ($45)</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Submit Payment</button>
+      </form>
+    </section>
+
+    <footer>
+      &copy; 2025 Fitness Club. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("paymentForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = {
+        fullName: document.getElementById("fullName").value,
+        email: document.getElementById("email").value,
+        cardNumber: document.getElementById("cardNumber").value,
+        expiryDate: document.getElementById("expiryDate").value,
+        cvv: document.getElementById("cvv").value,
+        plan: document.getElementById("plan").value
+      };
+
+      console.log("Payment Submitted:", formData);
+      alert("Thank you! Your payment has been processed.");
+    });
+  </script>
+</body>
+</html>

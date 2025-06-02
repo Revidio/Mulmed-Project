@@ -7,21 +7,6 @@
     <link rel="stylesheet" href="regisStyle.css">
 </head>
 <body>
-    <nav>
-      <div class="nav__logo">
-        <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>
-      </div>
-      <ul class="nav__links">
-        <li class="link"><a href="index.html">Home</a></li>
-        <li class="link"><a href="#explore">Program</a></li>
-        <li class="link"><a href="#">Service</a></li>
-        <li class="link"><a href="#">About</a></li>
-        <li class="link"><a href="#">Community</a></li>
-      </ul>
-      <a href="signup.html">
-        <button class="btn">Join Now</button>
-      </a>
-    </nav>
     <div class="container">
         <header>
             <div class="logo">FitClass</div>
@@ -46,7 +31,7 @@
             <form id="registration-form">
                 <h3>Choose Your Class</h3>
                 <div class="class-options">
-                    <div class="class-card" data-class-id="hiit">
+                    <div class="class-card" data-class-id="hiit" data-name="HIIT Blast" data-type="HIIT" onclick="selectCard(this)">
                         <h3>HIIT Training</h3>
                         <p>High-intensity interval training designed to burn maximum calories and improve cardiovascular fitness.</p>
                         <div class="class-details">
@@ -55,7 +40,7 @@
                         </div>
                     </div>
                     
-                    <div class="class-card" data-class-id="strength">
+                    <div class="class-card" data-class-id="strength" data-name="Strength Fusion" data-type="Strength" onclick="selectCard(this)">
                         <h3>Strength Fusion</h3>
                         <p>Build muscle and increase strength with this comprehensive resistance training session.</p>
                         <div class="class-details">
@@ -64,7 +49,7 @@
                         </div>
                     </div>
                     
-                    <div class="class-card" data-class-id="cardio">
+                    <div class="class-card" data-class-id="cardio" data-name="Cardio Blast" data-type="Cardio" onclick="selectCard(this)">
                         <h3>Cardio Blast</h3>
                         <p>A high-energy cardio workout that will get your heart pumping and calories burning.</p>
                         <div class="class-details">
@@ -73,7 +58,7 @@
                         </div>
                     </div>
                     
-                    <div class="class-card" data-class-id="functional">
+                    <div class="class-card" data-class-id="functional" data-name="Functional Fitness" data-type="Functional" onclick="selectCard(this)">
                         <h3>Functional Fitness</h3>
                         <p>Improve everyday movements with exercises that enhance coordination, balance, and strength.</p>
                         <div class="class-details">
