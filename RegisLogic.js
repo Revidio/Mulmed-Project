@@ -116,3 +116,33 @@
                 });
             });
         });
+
+// Store registered class in localStorage after form submission
+document.getElementById('registration-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const selectedCard = document.querySelector('.class-card.selected');
+    if (!selectedCard) {
+        alert('Please select a class');
+        return;
+    }
+
+    const classData = {
+        id: Date.now(),
+        name: selectedCard.getAttribute('data-name') || 'Unnamed Class',
+        type: selectedCard.getAttribute('data-type') || 'Unknown',
+        date: document.getElementById('date')?.value || '',
+        time: document.getElementById('time')?.value || '',
+        instructor: document.getElementById('instructor-name')?.value || '',
+        duration: document.getElementById('class-duration')?.value || '',
+        status: "upcoming"
+    };
+
+    let classes = JSON.parse(localStorage.getItem("bookedClasses")) || [];
+    classes.push(classData);
+    localStorage.setItem("bookedClasses", JSON.stringify(classes));
+
+    alert("Class registered successfully!");
+    this.reset();
+    selectedCard.classList.remove('selected');
+});
