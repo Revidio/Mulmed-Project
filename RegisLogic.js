@@ -142,7 +142,19 @@ document.getElementById('registration-form').addEventListener('submit', function
     classes.push(classData);
     localStorage.setItem("bookedClasses", JSON.stringify(classes));
 
-    alert("Class registered successfully!");
+    const successMsg = document.getElementById('success-message');
+const successBackdrop = document.getElementById('success-backdrop');
+
+
+    successMsg.classList.add('show');
+    successBackdrop.classList.add('show');
+
+    setTimeout(() => {
+    successMsg.classList.remove('show');
+    successBackdrop.classList.remove('show');
+    }, 3000);
+    window.location.href = "LandingPage.html";
+
     this.reset();
     selectedCard.classList.remove('selected');
 });
