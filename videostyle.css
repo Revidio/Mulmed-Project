@@ -75,6 +75,7 @@ body {
 
 .nav__logo {
   max-width: 150px;
+  size: 80px;
 }
 
 .nav__links {
