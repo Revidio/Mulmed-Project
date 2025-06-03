@@ -143,7 +143,7 @@
         if (confirm('Are you sure you want to logout?')) {
           alert('Logging out...');
           // In a real app, this would clear session and redirect
-          // window.location.href = 'index.html';
+          window.location.href = 'index.html';
         }
       }
 
