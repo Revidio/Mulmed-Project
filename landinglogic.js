@@ -124,7 +124,7 @@ function rescheduleClass(classId) {
   rescheduleClassId = classId;
   const options = [
     "06:00", "08:00", "10:00",
-    "12:00", "14:00 PM", "17:00 PM", "20:00 PM"
+    "12:00", "14:00", "17:00", "20:00"
   ];
 
   const select = document.getElementById('rescheduleOptions');
