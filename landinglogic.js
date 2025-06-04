@@ -102,21 +102,45 @@
       }
 
       function bookNewClass() {
-        alert('Redirecting to class booking page...');
+      // Show the redirect modal
+      document.getElementById('bookingRedirectModal').classList.remove('hidden');
+  
+      // Redirect after a short delay
+      setTimeout(() => {
         window.location.href = 'classRegis.html';
-      }
+      }, 1500); // 1.5 second delay
+    }
 
-      function cancelClass(classId) {
-        if (confirm('Are you sure you want to cancel this class?')) {
-          const classIndex = bookedClasses.findIndex(c => c.id === classId);
-          if (classIndex !== -1) {
-            bookedClasses[classIndex].status = 'cancelled';
-            renderClasses();
-            updateStats();
-            alert('Class cancelled successfully!');
-          }
-        }
-      }
+      let cancelClassId = null;
+
+function cancelClass(classId) {
+  cancelClassId = classId;
+  document.getElementById('cancelModal').classList.remove('hidden');
+}
+
+function confirmCancel() {
+  const classIndex = bookedClasses.findIndex(c => c.id === cancelClassId);
+  if (classIndex !== -1) {
+    bookedClasses[classIndex].status = 'cancelled';
+    localStorage.setItem("bookedClasses", JSON.stringify(bookedClasses));
+    renderClasses();
+    updateStats();
+    closeCancelModal();
+    showSuccessModal();
+  }
+}
+
+function closeCancelModal() {
+  document.getElementById('cancelModal').classList.add('hidden');
+}
+
+function showSuccessModal() {
+  document.getElementById('cancelSuccessModal').classList.remove('hidden');
+}
+
+function closeSuccessModal() {
+  document.getElementById('cancelSuccessModal').classList.add('hidden');
+}
 
       let rescheduleClassId = null;
 
