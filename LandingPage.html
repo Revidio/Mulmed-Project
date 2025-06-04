@@ -12,7 +12,39 @@
   </head>
   <body>
 
-    <div id="rescheduleModal" class="modal hidden">
+<div id="cancelModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Cancel Class</h2>
+    <p>Are you sure you want to cancel this class?</p>
+    <div class="modal-actions">
+      <button class="btn" onclick="confirmCancel()">Yes</button>
+      <button class="btn btn-outline" onclick="closeCancelModal()">No</button>
+    </div>
+  </div>
+</div>
+
+<div id="cancelSuccessModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Success</h2>
+    <p>Class cancelled successfully!</p>
+    <div class="modal-actions-center">
+      <button class="btn" onclick="closeSuccessModal()">OK</button>
+    </div>
+  </div>
+</div>
+
+<!-- <div id="logoutModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Cancel Class</h2>
+    <p>Are you sure you want to Log out?</p>
+    <div class="modal-actions">
+      <button class="btn" onclick="confirmCancel()">Yes</button>
+      <button class="btn btn-outline" onclick="closeCancelModal()">No</button>
+    </div>
+  </div>
+</div> -->
+
+  <div id="rescheduleModal" class="modal hidden">
   <div class="modal-content">
     <h2>Reschedule Class</h2>
 
@@ -25,6 +57,16 @@
     <div class="modal-actions">
       <button class="btn" onclick="confirmReschedule()">Confirm</button>
       <button class="btn btn-outline" onclick="closeRescheduleModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="bookingRedirectModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Redirecting</h2>
+    <p>Taking you to the booking page...</p>
+    <div class="modal-actions-center">
+      <div class="loading-spinner"></div>
     </div>
   </div>
 </div>
