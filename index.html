@@ -51,18 +51,16 @@
       <div class="explore__header">
         <h2 class="section__header">EXPLORE OUR PROGRAM</h2>
         <div class="explore__nav">
-          <span><i class="ri-arrow-left-line"></i></span>
-          <span><i class="ri-arrow-right-line"></i></span>
+          <span id="carousel-prev"><i class="ri-arrow-left-line"></i></span>
+          <span id="carousel-next"><i class="ri-arrow-right-line"></i></span>
         </div>
       </div>
-      <div class="explore__grid">
+      <div class="explore__carousel">
+      <div class="explore__track">
         <div class="explore__card">
           <span><i class="ri-boxing-fill"></i></span>
           <h4>Strength</h4>
-          <p>
-            Embrace the essence of strength as we delve into its various
-            dimensions physical, mental, and emotional.
-          </p>
+          <p>Embrace the essence of strength as we delve into its various dimensions physical, mental, and emotional.</p>
           <a href="video.html">View Video <i class="ri-arrow-right-line"></i></a>
         </div>
         <div class="explore__card">
@@ -74,7 +72,7 @@
           </p>
           <a href="video.html">View Video <i class="ri-arrow-right-line"></i></a>
         </div>
-        <div class="explore__card">
+          <div class="explore__card">
           <span><i class="ri-run-line"></i></span>
           <h4>Fitness</h4>
           <p>
@@ -83,7 +81,7 @@
           </p>
           <a href="video.html">View Video <i class="ri-arrow-right-line"></i></a>
         </div>
-        <div class="explore__card">
+          <div class="explore__card">
           <span><i class="ri-shopping-basket-fill"></i></span>
           <h4>HIIT</h4>
           <p>
@@ -93,6 +91,7 @@
           <a href="video.html">View Video <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
+    </div>
     </section>
 
     <section class="section__container class__container">
@@ -222,33 +221,27 @@
       </div>
     </section>
 
-    <section  id ="comments" class="review">
-      <div class="section__container review__container">
-        <span><i class="ri-double-quotes-r"></i></span>
-        <div class="review__content">
-          <h4>MEMBER REVIEW</h4>
-          <p>
-            What truly sets this gym apart is their expert team of trainers. The
-            trainers are knowledgeable, approachable, and genuinely invested in
-            helping members achieve their fitness goals. They take the time to
-            understand individual needs and create personalized workout plans,
-            ensuring maximum results and safety.
-          </p>
-          <div class="review__rating">
-            <span><i class="ri-star-fill"></i></span>
-            <span><i class="ri-star-fill"></i></span>
-            <span><i class="ri-star-fill"></i></span>
-            <span><i class="ri-star-fill"></i></span>
-            <span><i class="ri-star-half-fill"></i></span>
-          </div>
-            <div class="review__nav">
-              <span><i class="ri-arrow-left-line"></i></span>
-              <span><i class="ri-arrow-right-line"></i></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section class="section__container">
+  <h2 class="section__header">Share Your Experience</h2>
+  <form id="review-form" class="review__form">
+    <textarea id="review-text" rows="4" placeholder="Write your review..."></textarea>
+    <label for="rating">Rating:</label>
+    <select id="rating">
+      <option value="5">⭐⭐⭐⭐⭐</option>
+      <option value="4">⭐⭐⭐⭐</option>
+      <option value="3">⭐⭐⭐</option>
+      <option value="2">⭐⭐</option>
+      <option value="1">⭐</option>
+    </select>
+    <button type="submit" class="btn">Submit Review</button>
+  </form>
+  <div id="user-reviews" class="review__output"></div>
+</section>
+<!--  -->
+
+  <div id="user-reviews" style="margin-top: 2rem;"></div>
+</section>
+
 
     <footer class="section__container footer__container">
       <span class="bg__blur"></span>
@@ -289,5 +282,6 @@
     <div class="footer__bar">
       Copyright © 2025 FitFlight. All rights reserved.
     </div>
+    <script src="indexlogic.js"></script>
   </body>
 </html>
