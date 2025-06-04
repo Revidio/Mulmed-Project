@@ -3,14 +3,13 @@ const track   = document.querySelector(".explore__track");
   const prevBtn = document.getElementById("carousel-prev");
   const nextBtn = document.getElementById("carousel-next");
 
-  /* ---- helpers ------------------------------------------------------- */
   const GAP = parseFloat(getComputedStyle(document.documentElement)
                          .getPropertyValue('--prog-gap'));   // 32 px
   function cardsPerView(){
       const w = window.innerWidth;
       return w < 600 ? 1 : w < 900 ? 2 : 3;                 // 3 on desktops
   }
-  function stepSize(){                                      // card + gap
+  function stepSize(){                                      
       const cardWidth = track.firstElementChild.offsetWidth;
       return cardWidth + GAP;
   }
@@ -21,7 +20,6 @@ const track   = document.querySelector(".explore__track");
       track.style.transform = `translateX(-${index * stepSize()}px)`;
   }
 
-  /* ---- state --------------------------------------------------------- */
   let index = 0;
 
   /* ---- controls ------------------------------------------------------ */
@@ -29,7 +27,6 @@ const track   = document.querySelector(".explore__track");
   prevBtn.onclick = () => { if(index > 0){ index--; move(); } };
 
   window.addEventListener('resize', () => {
-      /* keep the current first-visible card centred on resize */
       index = Math.min(index, maxIndex());
       move();
   });
@@ -57,3 +54,5 @@ const track   = document.querySelector(".explore__track");
     document.getElementById("user-reviews").prepend(reviewDiv);
     document.getElementById("review-form").reset();
   });
+
+//   

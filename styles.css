@@ -516,6 +516,11 @@ nav {
   color: var(--secondary-color);
 }
 
+.review__output .review__rating {
+  font-size: 2rem; /* Increase from 1.25rem */
+  color: var(--secondary-color);
+}
+
 .footer__container {
   position: relative;
   display: grid;
