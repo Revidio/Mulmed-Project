@@ -76,26 +76,10 @@
     </section>
 
     <footer>
-      &copy; 2025 Fitness Club. All rights reserved.
+      &copy;
     </footer>
   </div>
 
-  <script>
-    document.getElementById("paymentForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const formData = {
-        fullName: document.getElementById("fullName").value,
-        email: document.getElementById("email").value,
-        cardNumber: document.getElementById("cardNumber").value,
-        expiryDate: document.getElementById("expiryDate").value,
-        cvv: document.getElementById("cvv").value,
-        plan: document.getElementById("plan").value
-      };
-
-      console.log("Payment Submitted:", formData);
-      alert("Thank you! Your payment has been processed.");
-    });
-  </script>
+  <script src="paymentlogic.js"></script>
 </body>
 </html>
