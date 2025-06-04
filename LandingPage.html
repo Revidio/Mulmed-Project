@@ -11,6 +11,25 @@
     <title>Dashboard | Fitclub</title>
   </head>
   <body>
+
+    <div id="rescheduleModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Reschedule Class</h2>
+
+    <label for="rescheduleDate">Select a new date:</label>
+    <input type="date" id="rescheduleDate" class="modal-input" />
+
+    <label for="rescheduleOptions" style="margin-top: 1rem;">Select a new time:</label>
+    <select id="rescheduleOptions" class="modal-input"></select>
+
+    <div class="modal-actions">
+      <button class="btn" onclick="confirmReschedule()">Confirm</button>
+      <button class="btn btn-outline" onclick="closeRescheduleModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
     <nav>
       <div class="nav__logo">
         <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>

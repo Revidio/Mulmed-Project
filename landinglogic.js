@@ -103,7 +103,6 @@
 
       function bookNewClass() {
         alert('Redirecting to class booking page...');
-        // In a real app, this would redirect to the class booking page
         window.location.href = 'classRegis.html';
       }
 
@@ -119,16 +118,55 @@
         }
       }
 
-      function rescheduleClass(classId) {
-        alert('Reschedule functionality would open a date/time picker here.');
-        // In a real app, this would open a reschedule modal
-      }
+      let rescheduleClassId = null;
+
+function rescheduleClass(classId) {
+  rescheduleClassId = classId;
+  const options = [
+    "06:00", "08:00", "10:00",
+    "12:00", "14:00", "17:00", "20:00"
+  ];
+
+  const select = document.getElementById('rescheduleOptions');
+  select.innerHTML = options.map(opt => `<option value="${opt}">${opt}</option>`).join('');
+
+  // Reset date picker to today
+  const dateInput = document.getElementById('rescheduleDate');
+  dateInput.value = new Date().toISOString().split('T')[0];
+
+  document.getElementById('rescheduleModal').classList.remove('hidden');
+}
+
+
+function confirmReschedule() {
+  const newDate = document.getElementById('rescheduleDate').value;
+  const newTime = document.getElementById('rescheduleOptions').value;
+
+  if (!newDate || !newTime) {
+    alert("Please select both a date and time.");
+    return;
+  }
+
+  const classIndex = bookedClasses.findIndex(c => c.id === rescheduleClassId);
+  if (classIndex !== -1) {
+    bookedClasses[classIndex].date = newDate;
+    bookedClasses[classIndex].time = newTime;
+    localStorage.setItem("bookedClasses", JSON.stringify(bookedClasses));
+    renderClasses();
+    updateStats();
+    closeRescheduleModal();
+    alert("Class rescheduled successfully!");
+  }
+}
+
+function closeRescheduleModal() {
+  document.getElementById('rescheduleModal').classList.add('hidden');
+}
 
       function bookAgain(classId) {
         const classItem = bookedClasses.find(c => c.id === classId);
         if (classItem) {
           alert(`Booking another ${classItem.name} class...`);
-          // In a real app, this would add a new booking
         }
       }
 
